@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  <!-- Link to CSS -->
+</head>
+<body>
+    <h1>Employee Data</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Salary</th>
+                <th>Join Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.age }}</td>
+                    <td>{{ row.city }}</td>
+                    <td>{{ row.salary }}</td>
+                    <td>{{ row.join_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>  <!-- Link to JS -->
+</body>
+</html>
